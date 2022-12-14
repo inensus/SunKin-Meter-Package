@@ -3,10 +3,9 @@
 namespace Inensus\SunKingMeter\Http\Controllers;
 
 use Illuminate\Routing\Controller;
-
-use Inensus\MicroStarMeter\Http\Requests\MicroStarCredentialRequest;
-use Inensus\MicroStarMeter\Http\Resources\MicroStarResource;
-use Inensus\SunKingMeter\Meter\Services\SunKingCredentialService;
+use Inensus\SunKingMeter\Http\Requests\SunKingCredentialRequest;
+use Inensus\SunKingMeter\Http\Resources\SunKingResource;
+use Inensus\SunKingMeter\Services\SunKingCredentialService;
 
 
 class SunKingCredentialController extends Controller
@@ -16,17 +15,20 @@ class SunKingCredentialController extends Controller
     {
     }
 
-    public function show(): MicroStarResource
+    public function show(): SunKingResource
     {
-        return MicroStarResource::make($this->credentialService->getCredentials());
+        return SunKingResource::make($this->credentialService->getCredentials());
     }
-    public function update(MicroStarCredentialRequest $request): MicroStarResource
+
+    public function update(SunKingCredentialRequest $request): SunKingResource
     {
-        $credentials = $this->credentialService->updateCredentials($request->only([
-            'id',
+        $credentials = $this->credentialService->getCredentials();
+        $updateData = $request->only([
             'client_id',
             'client_secret'
-        ]));
-        return MicroStarResource::make($credentials);
+        ]);
+        $credentials = $this->credentialService->updateCredentials($credentials, $updateData);
+
+        return SunKingResource::make($credentials);
     }
 }

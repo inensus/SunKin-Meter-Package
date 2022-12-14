@@ -7,8 +7,8 @@ use App\Lib\IManufacturerAPI;
 use App\Misc\TransactionDataContainer;
 use App\Models\Meter\Meter;
 use Illuminate\Support\Facades\Log;
-use Inensus\SunKingMeter\Meter\Services\SunKingCredentialService;
 use Inensus\SunKingMeter\Models\SunKingTransaction;
+use Inensus\SunKingMeter\Services\SunKingCredentialService;
 
 
 class SunKingMeterApi implements IManufacturerAPI
@@ -17,7 +17,7 @@ class SunKingMeterApi implements IManufacturerAPI
     const COMMAND_ADD_CREDIT = 'add_credit';
 
     public function __construct(
-        private SunKingCredentialService $credentialService,
+        private SunKingCdentialService $credentialService,
         private SunKingTransaction $sunKingTransaction,
         private ApiRequests $apiRequests
     ) {

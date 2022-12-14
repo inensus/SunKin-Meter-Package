@@ -6,7 +6,7 @@ use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Log;
 use Inensus\SunKingMeter\Exceptions\SunKingApiResponseException;
-use Inensus\SunKingMeter\Meter\Services\SunKingCredentialService;
+use Inensus\SunKingMeter\Services\SunKingCredentialService;
 use Inensus\SunKingMeter\Models\SunKingCredential;
 
 

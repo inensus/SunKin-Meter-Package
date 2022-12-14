@@ -1,7 +1,6 @@
 <?php
 
-namespace Inensus\SunKingMeter\Meter\Services;
-
+namespace Inensus\SunKingMeter\Services;
 
 use Inensus\SunKingMeter\Models\SunKingCredential;
 

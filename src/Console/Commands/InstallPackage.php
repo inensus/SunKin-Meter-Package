@@ -2,7 +2,7 @@
 namespace Inensus\SunKingMeter\Console\Commands;
 
 use Illuminate\Console\Command;
-use Inensus\SunKingMeter\Meter\Services\SunKingCredentialService;
+use Inensus\SunKingMeter\Services\SunKingCredentialService;
 use Inensus\SunKingMeter\Services\ManufacturerService;
 use Inensus\SunKingMeter\Services\MenuItemService;
 
